@@ -10,7 +10,8 @@ import streamlit as st
 st.title("My First App")
 st.write("Hello Amelia!")
 
-import cv2
+#import cv2
+import opencv-python-headless as cv2
 import numpy as np
 
 def preprocess(img):
@@ -56,6 +57,6 @@ filters = st.selectbox("...and now, apply a filter!", filters_to_funcs.keys())
 
 if picture:
     img = st.image(filters_to_funcs[filters](picture), channels="BGR")
-    st.write(img)
+    st.write(img.shape)
 else:
     st.write("No Image Available")
